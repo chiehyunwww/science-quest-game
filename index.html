@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f3f6f2" />
+    <title>自然探險隊｜國中自然闖關</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="自然探險隊首頁">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none"><path d="M20 4.5 34 10v9.4c0 8.1-5.5 13.4-14 16.1C11.5 32.8 6 27.5 6 19.4V10l14-5.5Z" fill="currentColor"/><path d="M14.5 24.5c5-1 9.8-5.5 11-11 1.2 7.3-1.8 12.7-8.6 13.6-2.2.3-4.5-.9-4.6-2.2-.1-1.3.8-2 2.2-2.4Z" fill="#F8F7EF"/><path d="M14 27.5c1-3 3.5-5.4 7-7" stroke="#F8F7EF" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </span>
+          <span class="brand-copy"><strong>自然探險隊</strong><small>SCIENCE QUEST</small></span>
+        </a>
+        <div class="topbar-right">
+          <span class="topbar-note"><span class="live-dot"></span>任務進行中</span>
+          <div class="score-chip" aria-live="polite" aria-label="目前總分">
+            <span class="score-chip-icon" aria-hidden="true">✦</span>
+            <span id="topScore">0</span><span class="score-chip-unit">分</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="intro-row">
+        <div>
+          <p class="eyebrow">國中自然科・互動闖關</p>
+          <h1>帶著好奇心，<span>出發探險。</span></h1>
+          <p class="intro-copy">移動探險家，蒐集每道題目的正確答案，完成五個科學任務！</p>
+        </div>
+        <div class="rule-stamp"><span class="rule-star">✦</span><div><strong>答對 +10</strong><small>答錯 −5</small></div></div>
+      </section>
+
+      <section class="game-layout" aria-label="自然科闖關遊戲">
+        <aside class="journey-panel">
+          <div class="journey-head">
+            <div><p class="section-label">YOUR JOURNEY</p><h2>探險路線</h2></div>
+            <span class="level-count" id="levelCount">1 / 5</span>
+          </div>
+          <div class="journey-track" aria-label="五個關卡進度">
+            <div class="track-rail" aria-hidden="true"></div>
+            <ol class="level-list" id="levelList">
+              <li class="level-item is-active" data-level="0"><span class="level-node">01</span><span class="level-copy"><strong>物質變變變</strong><small>物質與變化</small></span><span class="level-check" aria-hidden="true">✓</span></li>
+              <li class="level-item" data-level="1"><span class="level-node">02</span><span class="level-copy"><strong>力與運動</strong><small>生活中的力</small></span><span class="level-check" aria-hidden="true">✓</span></li>
+              <li class="level-item" data-level="2"><span class="level-node">03</span><span class="level-copy"><strong>生態能量站</strong><small>生物與環境</small></span><span class="level-check" aria-hidden="true">✓</span></li>
+              <li class="level-item" data-level="3"><span class="level-node">04</span><span class="level-copy"><strong>地球觀測所</strong><small>地球與天氣</small></span><span class="level-check" aria-hidden="true">✓</span></li>
+              <li class="level-item" data-level="4"><span class="level-node">05</span><span class="level-copy"><strong>光電研究室</strong><small>光、聲音與電</small></span><span class="level-check" aria-hidden="true">✓</span></li>
+            </ol>
+          </div>
+          <div class="side-divider"></div>
+          <div class="score-summary">
+            <span class="summary-icon" aria-hidden="true">✧</span>
+            <div><small>目前累積分數</small><strong><span id="sideScore">0</span><em>分</em></strong></div>
+          </div>
+          <div class="streak-tip"><span aria-hidden="true">💡</span><p>仔細觀察題目，靠近答案卡就能蒐集！</p></div>
+        </aside>
+
+        <section class="game-panel" aria-label="遊戲畫面">
+          <div class="mission-bar">
+            <div class="mission-heading">
+              <div class="mission-kicker"><span class="mission-spark" aria-hidden="true">✦</span><span id="missionTopic">第一站・物質與變化</span></div>
+              <h2 id="questionText">準備開始你的科學探險！</h2>
+            </div>
+            <div class="question-count"><span class="count-label">QUESTION</span><strong><span id="questionNumber">01</span><i>/</i><span id="questionTotal">03</span></strong></div>
+          </div>
+
+          <div class="arena-wrap">
+            <div id="game-stage" class="game-stage" aria-label="遊戲場景"></div>
+            <div class="toast" id="toast" role="status" aria-live="polite"></div>
+            <div class="screen-overlay" id="screenOverlay">
+              <div class="overlay-card">
+                <div class="overlay-illustration" aria-hidden="true"><span class="planet planet-one"></span><span class="planet planet-two"></span><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span><span class="explorer">⌁</span></div>
+                <p class="overlay-kicker">SCIENCE QUEST · 5 STAGES</p>
+                <h2 id="overlayTitle">準備好探索了嗎？</h2>
+                <p class="overlay-copy" id="overlayCopy">用方向鍵或 WASD 移動角色，碰到正確答案卡就能得分。每關有 3 道題，一起完成五個科學任務吧！</p>
+                <button class="primary-button" id="overlayButton" type="button">開始探險 <span aria-hidden="true">→</span></button>
+                <p class="overlay-footnote">答對 +10 分 <span>·</span> 答錯 −5 分</p>
+              </div>
+            </div>
+          </div>
+
+          <footer class="game-footer">
+            <div class="controls-hint"><span class="keyboard-icon" aria-hidden="true">⌨</span><span>使用 <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> 或方向鍵移動</span></div>
+            <div class="touch-controls" id="touchControls" aria-label="觸控方向控制">
+              <button type="button" data-dir="up" aria-label="向上">↑</button>
+              <div><button type="button" data-dir="left" aria-label="向左">←</button><button type="button" data-dir="down" aria-label="向下">↓</button><button type="button" data-dir="right" aria-label="向右">→</button></div>
+            </div>
+            <div class="arena-legend"><span><i class="legend-dot dot-player"></i>探險家</span><span><i class="legend-dot dot-answer"></i>答案卡</span></div>
+          </footer>
+        </section>
+      </section>
+      <footer class="page-footer"><span>自然探險隊 <i>·</i> 邊玩邊學，發現科學</span><span>每一個答案，都是新發現。</span></footer>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.min.js"></script>
+    <script src="game.js"></script>
+  </body>
+</html>
