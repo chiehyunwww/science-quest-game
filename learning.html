@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="zh-Hant" style="overflow-y:scroll">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f7f3">
+    <title>遊戲式學習實驗室</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body class="bg-body-tertiary text-body" style="padding-left:calc(100vw - 100%)">
+    <nav class="navbar navbar-expand-lg bg-white border-bottom fixed-top shadow-sm">
+      <div class="container-fluid px-4 px-xl-5">
+        <a class="navbar-brand fw-bold text-success" href="#top">遊戲式學習實驗室</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="開啟導覽選單">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="mainNavigation">
+          <ul class="navbar-nav gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="#meaning">認識遊戲式學習</a></li>
+            <li class="nav-item"><a class="nav-link" href="#mechanisms">十種遊戲機制</a></li>
+            <li class="nav-item"><a class="nav-link" href="#design">設計小指南</a></li>
+            <li class="nav-item"><a class="nav-link" href="#sources">範例來源</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main id="top" style="padding-top:3.5rem">
+      <section class="container-fluid px-4 px-xl-5 py-5">
+        <div class="row align-items-center g-4 rounded-5 bg-dark text-white p-4 p-lg-5 shadow-lg">
+          <div class="col-lg-7 py-lg-4">
+            <span class="badge rounded-pill bg-success-subtle text-success-emphasis px-3 py-2 mb-3">教學設計指南</span>
+            <h1 class="display-3 fw-bold lh-sm">讓知識變成<br><span class="text-warning">可以親自探索的任務</span></h1>
+            <p class="lead text-white-50 mt-4 mb-4">遊戲式學習把學習目標放進規則、挑戰與選擇之中，讓學生透過行動、回饋和反思理解知識。</p>
+            <a class="btn btn-warning btn-lg rounded-pill fw-semibold px-4" href="#mechanisms">探索十種遊戲機制</a>
+          </div>
+          <div class="col-lg-5">
+            <div class="row row-cols-2 g-3">
+              <div class="col"><div class="h-100 rounded-4 bg-white text-dark p-3 p-lg-4"><div class="display-6 fw-bold text-success">01</div><div class="fw-semibold">明確目標</div><small class="text-secondary">知道為何而學</small></div></div>
+              <div class="col"><div class="h-100 rounded-4 bg-white text-dark p-3 p-lg-4"><div class="display-6 fw-bold text-primary">02</div><div class="fw-semibold">主動選擇</div><small class="text-secondary">做出策略決定</small></div></div>
+              <div class="col"><div class="h-100 rounded-4 bg-white text-dark p-3 p-lg-4"><div class="display-6 fw-bold text-warning">03</div><div class="fw-semibold">即時回饋</div><small class="text-secondary">看見行動結果</small></div></div>
+              <div class="col"><div class="h-100 rounded-4 bg-white text-dark p-3 p-lg-4"><div class="display-6 fw-bold text-danger">04</div><div class="fw-semibold">反思遷移</div><small class="text-secondary">把經驗帶回課堂</small></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="meaning" class="container-fluid px-4 px-xl-5 pb-5">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-7">
+            <div class="h-100 rounded-4 bg-white border shadow-sm p-4 p-lg-5">
+              <span class="text-success fw-bold">先從學習目標開始</span>
+              <h2 class="display-6 fw-bold mt-2">什麼是遊戲式學習</h2>
+              <p class="text-secondary fs-5 mt-3">遊戲式學習是把學科內容、遊戲規則和學習活動整合在一起。學生不是只領取點數，而是在遊戲中觀察、推理、嘗試、修正，再說明自己學到了什麼。</p>
+              <p class="mb-0">遊戲化通常是在既有活動加上徽章或分數。遊戲式學習則讓學習內容成為玩法的一部分。</p>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="h-100 rounded-4 bg-success-subtle border border-success-subtle p-4 p-lg-5">
+              <span class="badge rounded-pill text-bg-success">一個好用的設計循環</span>
+              <ol class="list-group list-group-numbered list-group-flush mt-3">
+                <li class="list-group-item bg-transparent">設定可觀察的學習目標</li>
+                <li class="list-group-item bg-transparent">設計能練習目標的遊戲任務</li>
+                <li class="list-group-item bg-transparent">提供清楚而即時的回饋</li>
+                <li class="list-group-item bg-transparent">帶領學生解釋策略並連結課程</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="mechanisms" class="container-fluid px-4 px-xl-5 py-5 bg-white border-top border-bottom">
+        <div class="row align-items-end g-3 mb-4">
+          <div class="col-lg-8">
+            <span class="text-success fw-bold">從玩法連結學習</span>
+            <h2 class="display-5 fw-bold mt-2 mb-2">十種值得帶進課堂的機制</h2>
+            <p class="text-secondary mb-0">每個遊戲都直接嵌入官方 Phaser 範例。可在畫面中操作，也能開啟官方頁面放大遊玩。</p>
+          </div>
+          <div class="col-lg-4 text-lg-end"><span class="badge rounded-pill text-bg-dark px-3 py-2">實際操作比看分數更重要</span></div>
+        </div>
+
+        <article id="mission" class="row g-0 align-items-stretch overflow-hidden rounded-4 border shadow-sm mb-4">
+          <div class="col-lg-3 p-4 p-xl-5 bg-success-subtle d-flex flex-column justify-content-center">
+            <span class="badge rounded-pill text-bg-success align-self-start">01 任務與收集</span>
+            <h3 class="h2 fw-bold mt-3">探索目標</h3>
+            <p class="text-secondary">把單元拆成可完成的任務，讓學生蒐集線索、克服障礙，再抵達目標。</p>
+            <div class="small"><strong>課堂轉化</strong><br>依食物鏈順序蒐集生物卡，找到通往下一站的出口。</div>
+            <a class="link-success fw-semibold mt-3" href="https://github.com/phaserjs/examples/tree/master/public/src/games/my%20first%20game" target="_blank" rel="noopener">查看官方範例</a>
+          </div>
+          <div class="col-lg-9 p-2 p-md-3 bg-dark-subtle">
+            <iframe class="w-100 rounded-3 border bg-white" src="https://labs.phaser.io/phaser4-view.html?src=src%2Fgames%2Fmy%20first%20game%2Fgame.js&v=3.90.0&module=true" title="任務與收集的 Phaser 遊戲範例" height="760" loading="lazy" allowfullscreen></iframe>
+          </div>
+        </article>
+
+        <article id="avoid" class="row g-0 align-items-stretch overflow-hidden rounded-4 border shadow-sm mb-4">
+          <div class="col-lg-3 p-4 p-xl-5 bg-warning-subtle d-flex flex-column justify-content-center">
+            <span class="badge text-bg-warning align-self-start">02 閃避與取捨</span>
+            <h3 class="h2 fw-bold mt-3">選擇安全路徑</h3>
+            <p class="text-secondary">在風險與獎勵之間判斷，練習注意線索、控制移動和即時決策。</p>
+            <div class="small"><strong>課堂轉化</strong><br>避開危險樣本，只蒐集符合實驗條件的材料。</div>
+            <a class="link-success fw-semibold mt-3" href="https://github.com/phaserjs/examples/tree/master/public/src/games/avoid%20the%20germs" target="_blank" rel="noopener">查看官方範例</a>
+          </div>
+          <div class="col-lg-9 p-2 p-md-3 bg-dark-subtle">
+            <iframe class="w-100 rounded-3 border bg-white" src="https://labs.phaser.io/phaser4-view.html?src=src%2Fgames%2Favoid%20the%20germs%2Fmain.js&v=3.90.0&module=true" title="閃避與取捨的 Phaser 遊戲範例" height="760" loading="lazy" allowfullscreen></iframe>
+          </div>
+        </article>
+
+        <article id="target" class="row g-0 align-items-stretch overflow-hidden rounded-4 border shadow-sm mb-4">
+          <div class="col-lg-3 p-4 p-xl-5 bg-danger-subtle d-flex flex-column justify-content-center">
+            <span class="badge text-bg-danger align-self-start">03 辨識與抑制</span>
+            <h3 class="h2 fw-bold mt-3">分辨目標</h3>
+            <p class="text-secondary">不是看到線索就立刻反應，還要辨認目標並抑制錯誤選擇。</p>
+            <div class="small"><strong>課堂轉化</strong><br>比較樣本特徵，選出符合分類條件的對象。</div>
+            <a class="link-success fw-semibold mt-3" href="https://github.com/phaserjs/examples/tree/master/public/src/games/bank%20panic" target="_blank" rel="noopener">查看官方範例</a>
+          </div>
+          <div class="col-lg-9 p-2 p-md-3 bg-dark-subtle">
+            <iframe class="w-100 rounded-3 border bg-white" src="https://labs.phaser.io/phaser4-view.html?src=src%2Fgames%2Fbank%20panic%2Fmain.js&v=3.90.0&module=true" title="辨識與抑制的 Phaser 遊戲範例" height="760" loading="lazy" allowfullscreen></iframe>
+          </div>
+        </article>
+
+        <article id="memory" class="row g-0 align-items-stretch overflow-hidden rounded-4 border shadow-sm mb-4">
+          <div class="col-lg-3 p-4 p-xl-5 bg-primary-subtle d-flex flex-column justify-content-center">
+            <span class="badge text-bg-primary align-self-start">04 記憶配對</span>
+            <h3 class="h2 fw-bold mt-3">建立概念連結</h3>
+            <p class="text-secondary">翻開卡片記住位置，找到成對概念，練習提取記憶與建立關聯。</p>
+            <div class="small"><strong>課堂轉化</strong><br>配對物質名稱與性質，或器官與功能。</div>
+            <a class="link-success fw-semibold mt-3" href="https://github.com/phaserjs/examples/tree/master/public/src/games/card%20memory" target="_blank" rel="noopener">查看官方範例</a>
+          </div>
+          <div class="col-lg-9 p-2 p-md-3 bg-dark-subtle">
+            <iframe class="w-100 rounded-3 border bg-white" src="https://labs.phaser.io/phaser4-view.html?src=src%2Fgames%2Fcard%20memory%2Fmain.js&v=dev&module=true" title="記憶配對的 Phaser 遊戲範例" height="760" loading="lazy" allowfullscreen></iframe>
+          </div>
+        </article>
+
+        <article id="pattern" class="row g-0 align-items-stretch overflow-hidden rounded-4 border shadow-sm mb-4">
+          <div class="col-lg-3 p-4 p-xl-5 bg-info-subtle d-flex flex-column justify-content-center">
+            <span class="badge text-bg-info align-self-start">05 模式辨識</span>
+            <h3 class="h2 fw-bold mt-3">搜尋相同特徵</h3>
+            <p class="text-secondary">在一組圖像中找出相同項目，練習觀察、比較與限時搜尋。</p>
+            <div class="small"><strong>課堂轉化</strong><br>從細胞構造、岩石紋理或生物特徵中找出相同模式。</div>
+            <a class="link-success fw-semibold mt-3" href="https://github.com/phaserjs/examples/tree/master/public/src/games/emoji%20match" target="_blank" rel="noopener">查看官方範例</a>
+          </div>
+          <div class="col-lg-9 p-2 p-md-3 bg-dark-subtle">
+            <iframe class="w-100 rounded-3 border bg-white" src="https://labs.phaser.io/phaser4-view.html?src=src%2Fgames%2Femoji%20match%2Fmain.js&v=3.90.0&module=true" title="模式辨識的 Phaser 遊戲範例" height="760" loading="lazy" allowfullscreen></iframe>
+          </div>
+        </article>
+
+        <article id="flood" class="row g-0 align-items-stretch overflow-hidden rounded-4 border shadow-sm mb-4">
+          <div class="col-lg-3 p-4 p-xl-5 bg-warning-subtle d-flex flex-column justify-content-center">
+            <span class="badge text-bg-warning align-self-start">06 區域擴張</span>
+            <h3 class="h2 fw-bold mt-3">逐步改變狀態</h3>
+            <p class="text-secondary">每次選擇都會改變相鄰區域，學生能觀察策略如何影響整體結果。</p>
+            <div class="small"><strong>課堂轉化</strong><br>選擇分類條件，觀察同類樣本如何連成更大的區域。</div>
+            <a class="link-success fw-semibold mt-3" href="https://github.com/phaserjs/examples/tree/master/public/src/games/flood%20fill" target="_blank" rel="noopener">查看官方範例</a>
+          </div>
+          <div class="col-lg-9 p-2 p-md-3 bg-dark-subtle">
+            <iframe class="w-100 rounded-3 border bg-white" src="https://labs.phaser.io/phaser4-view.html?src=src%2Fgames%2Fflood%20fill%2Fflood-fill.js&v=3.90.0" title="區域擴張的 Phaser 遊戲範例" height="760" loading="lazy" allowfullscreen></iframe>
+          </div>
+        </article>
+
+        <article id="deduction" class="row g-0 align-items-stretch overflow-hidden rounded-4 border shadow-sm mb-4">
+          <div class="col-lg-3 p-4 p-xl-5 bg-danger-subtle d-flex flex-column justify-content-center">
+            <span class="badge text-bg-danger align-self-start">07 線索推理</span>
+            <h3 class="h2 fw-bold mt-3">從證據排除</h3>
+            <p class="text-secondary">把局部提示轉成假設，再逐步排除不合理的可能性。</p>
+            <div class="small"><strong>課堂轉化</strong><br>用觀察紀錄推測未知格，並說明判斷依據。</div>
+            <a class="link-success fw-semibold mt-3" href="https://github.com/phaserjs/examples/tree/master/public/src/games/minesweeper" target="_blank" rel="noopener">查看官方範例</a>
+          </div>
+          <div class="col-lg-9 p-2 p-md-3 bg-dark-subtle">
+            <iframe class="w-100 rounded-3 border bg-white" src="https://labs.phaser.io/phaser4-view.html?src=src%2Fgames%2Fminesweeper%2Fminesweeper.js&v=3.90.0" title="線索推理的 Phaser 遊戲範例" height="760" loading="lazy" allowfullscreen></iframe>
+          </div>
+        </article>
+
+        <article id="spatial" class="row g-0 align-items-stretch overflow-hidden rounded-4 border shadow-sm mb-4">
+          <div class="col-lg-3 p-4 p-xl-5 bg-primary-subtle d-flex flex-column justify-content-center">
+            <span class="badge text-bg-primary align-self-start">08 空間規劃</span>
+            <h3 class="h2 fw-bold mt-3">預想移動順序</h3>
+            <p class="text-secondary">每一步都會改變可用位置，鼓勵先想下一步，再決定當下的移動。</p>
+            <div class="small"><strong>課堂轉化</strong><br>把實驗步驟或概念圖移到正確位置，練習安排順序。</div>
+            <a class="link-success fw-semibold mt-3" href="https://github.com/phaserjs/examples/tree/master/public/src/games/sliding%20puzzle" target="_blank" rel="noopener">查看官方範例</a>
+          </div>
+          <div class="col-lg-9 p-2 p-md-3 bg-dark-subtle">
+            <iframe class="w-100 rounded-3 border bg-white" src="https://labs.phaser.io/phaser4-view.html?src=src%2Fgames%2Fsliding%20puzzle%2Fmain.js&v=dev&module=true" title="空間規劃的 Phaser 遊戲範例" height="760" loading="lazy" allowfullscreen></iframe>
+          </div>
+        </article>
+
+        <article id="timing" class="row g-0 align-items-stretch overflow-hidden rounded-4 border shadow-sm mb-4">
+          <div class="col-lg-3 p-4 p-xl-5 bg-success-subtle d-flex flex-column justify-content-center">
+            <span class="badge text-bg-success align-self-start">09 時機與精準</span>
+            <h3 class="h2 fw-bold mt-3">抓準操作時刻</h3>
+            <p class="text-secondary">在移動速度增加時精準放置方塊，從結果中修正操作策略。</p>
+            <div class="small"><strong>課堂轉化</strong><br>控制操作時機並比較測量結果，討論精準度如何影響答案。</div>
+            <a class="link-success fw-semibold mt-3" href="https://github.com/phaserjs/examples/tree/master/public/src/games/stacker" target="_blank" rel="noopener">查看官方範例</a>
+          </div>
+          <div class="col-lg-9 p-2 p-md-3 bg-dark-subtle">
+            <iframe class="w-100 rounded-3 border bg-white" src="https://labs.phaser.io/phaser4-view.html?src=src%2Fgames%2Fstacker%2Fstacker.js&v=3.90.0" title="時機與精準的 Phaser 遊戲範例" height="760" loading="lazy" allowfullscreen></iframe>
+          </div>
+        </article>
+
+        <article id="physics" class="row g-0 align-items-stretch overflow-hidden rounded-4 border shadow-sm">
+          <div class="col-lg-3 p-4 p-xl-5 bg-info-subtle d-flex flex-column justify-content-center">
+            <span class="badge text-bg-info align-self-start">10 物理因果</span>
+            <h3 class="h2 fw-bold mt-3">觀察碰撞結果</h3>
+            <p class="text-secondary">球的反彈方向會隨碰撞位置改變，讓規則、操作與結果清楚連結。</p>
+            <div class="small"><strong>課堂轉化</strong><br>改變碰撞位置，觀察運動方向與速度如何改變。</div>
+            <a class="link-success fw-semibold mt-3" href="https://github.com/phaserjs/examples/tree/master/public/src/games/breakout" target="_blank" rel="noopener">查看官方範例</a>
+          </div>
+          <div class="col-lg-9 p-2 p-md-3 bg-dark-subtle">
+            <iframe class="w-100 rounded-3 border bg-white" src="https://labs.phaser.io/phaser4-view.html?src=src%2Fgames%2Fbreakout%2Fbreakout.js&v=3.90.0" title="物理因果的 Phaser 遊戲範例" height="760" loading="lazy" allowfullscreen></iframe>
+          </div>
+        </article>
+      </section>
+
+      <section id="design" class="container-fluid px-4 px-xl-5 py-5">
+        <div class="rounded-4 bg-dark text-white p-4 p-lg-5 shadow-sm">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-5">
+              <span class="badge rounded-pill bg-warning text-dark">設計小指南</span>
+              <h2 class="display-6 fw-bold mt-3">先問學生要學會什麼</h2>
+              <p class="text-white-50 mb-lg-0">挑選機制時，先確認它能不能讓學生練到目標能力，再決定如何計分或升級。</p>
+            </div>
+            <div class="col-lg-7">
+              <div class="row row-cols-1 row-cols-md-2 g-3">
+                <div class="col"><div class="rounded-3 bg-white bg-opacity-10 p-3 h-100"><strong>目標對齊</strong><p class="small text-white-50 mb-0 mt-1">每種玩法都要服務一項知識或能力。</p></div></div>
+                <div class="col"><div class="rounded-3 bg-white bg-opacity-10 p-3 h-100"><strong>錯誤可修正</strong><p class="small text-white-50 mb-0 mt-1">讓錯誤提供線索，而不是只帶來懲罰。</p></div></div>
+                <div class="col"><div class="rounded-3 bg-white bg-opacity-10 p-3 h-100"><strong>難度有層次</strong><p class="small text-white-50 mb-0 mt-1">從可完成的挑戰開始，再逐步增加複雜度。</p></div></div>
+                <div class="col"><div class="rounded-3 bg-white bg-opacity-10 p-3 h-100"><strong>安排反思</strong><p class="small text-white-50 mb-0 mt-1">遊戲後請學生說明策略、證據與新的理解。</p></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer id="sources" class="container-fluid px-4 px-xl-5 pb-5">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 border-top pt-4">
+          <div><strong>遊戲式學習實驗室</strong><div class="small text-secondary">概念整理與 Phaser 官方遊戲範例</div></div>
+          <div class="d-flex gap-3 small"><a href="https://github.com/phaserjs/examples/tree/master/public/src/games" target="_blank" rel="noopener">Phaser 遊戲範例庫</a><a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" target="_blank" rel="noopener">Bootstrap 官方文件</a></div>
+        </div>
+      </footer>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>
