@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f2f5ff">
+    <title>數字探險隊｜加減法配對</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      :root { color-scheme: light; --ink: #1e2741; --muted: #64708a; --purple: #5a65c8; --mint: #dff5ea; --line: #e3e8f2; }
+      html { min-height: 100%; }
+      body { min-height: 100vh; margin: 0; color: var(--ink); font-family: "DM Sans", "Noto Sans TC", sans-serif; background: radial-gradient(circle at 15% 8%, #e7f4ff 0, transparent 30rem), radial-gradient(circle at 95% 30%, #f0eaff 0, transparent 27rem), #f5f7fc; }
+      .topbar { background: rgba(255,255,255,.9); border-bottom: 1px solid var(--line); backdrop-filter: blur(16px); }
+      .brand-mark { width: 38px; height: 38px; display: grid; place-items: center; color: white; border-radius: 13px; background: linear-gradient(145deg, #7079e8, #4953b2); box-shadow: 0 8px 20px #5964c833; font-size: 22px; }
+      .brand-title { font-weight: 800; letter-spacing: .02em; }
+      .back-link { color: #4c5ab6; text-decoration: none; font-weight: 700; }
+      .hero { display: flex; justify-content: space-between; align-items: end; gap: 24px; padding: 24px 0 20px; }
+      .eyebrow { color: #606cc8; text-transform: uppercase; letter-spacing: .14em; font-size: .77rem; font-weight: 800; }
+      .hero h1 { margin: 5px 0 7px; font-weight: 900; letter-spacing: -.04em; }
+      .hero h1 span { color: var(--purple); }
+      .hero p { max-width: 660px; color: var(--muted); margin: 0; }
+      .stat-row { display: flex; gap: 10px; flex-shrink: 0; }
+      .stat-card { min-width: 102px; border: 1px solid var(--line); border-radius: 18px; background: white; padding: 10px 14px; box-shadow: 0 8px 24px #29375e0b; }
+      .stat-card small { display: block; color: var(--muted); font-size: .72rem; }
+      .stat-card strong { font-size: 1.3rem; font-weight: 900; }
+      .game-shell { border: 1px solid #e0e5f0; border-radius: 26px; background: white; padding: 22px; box-shadow: 0 22px 70px #31416f14; }
+      .game-heading { display: flex; justify-content: space-between; align-items: start; gap: 18px; }
+      .stage-chip { display: inline-flex; align-items: center; gap: 7px; padding: 6px 11px; border-radius: 999px; background: #edf0ff; color: #4c59bb; font-size: .78rem; font-weight: 800; }
+      .stage-dot { width: 8px; height: 8px; display: inline-block; border-radius: 50%; background: #6c78e3; }
+      .game-heading h2 { margin: 9px 0 3px; font-size: 1.3rem; font-weight: 850; }
+      .game-heading p { color: var(--muted); margin: 0; font-size: .92rem; }
+      .pair-counter { flex-shrink: 0; color: var(--muted); font-size: .82rem; font-weight: 700; text-align: right; }
+      .pair-counter strong { display: block; color: var(--ink); font-size: 1.1rem; }
+      .progress { height: 7px; margin: 15px 0 12px; border-radius: 9px; background: #edf0f6; }
+      .progress-bar { border-radius: 9px; background: linear-gradient(90deg, #7b83ed, #5ac59a); transition: width .25s ease; }
+      #game-container { width: 100%; height: 500px; overflow: hidden; border: 1px solid #e5e9f3; border-radius: 20px; background: linear-gradient(145deg, #f5f7ff, #f2f8ff); }
+      #game-container canvas { display: block; width: 100%; height: 100%; border-radius: inherit; touch-action: manipulation; }
+      .feedback { display: flex; align-items: start; gap: 12px; min-height: 66px; margin-top: 13px; padding: 12px 15px; border: 1px solid #e4e8f2; border-radius: 15px; background: #f8f9fd; }
+      .feedback-icon { width: 28px; height: 28px; display: grid; place-items: center; flex: 0 0 auto; color: #5561c5; border-radius: 9px; background: #e9ecff; font-weight: 900; }
+      .feedback strong { display: block; font-size: .9rem; }
+      .feedback p { margin: 2px 0 0; color: var(--muted); font-size: .84rem; line-height: 1.5; }
+      .feedback.correct { background: #effbf5; border-color: #c8efda; }
+      .feedback.correct .feedback-icon { color: #198754; background: #d8f4e4; }
+      .feedback.try { background: #fff8eb; border-color: #f7e2b6; }
+      .feedback.try .feedback-icon { color: #9d6710; background: #ffedc9; }
+      .feedback.warn { background: #f4f5ff; border-color: #dfe2ff; }
+      .actions { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; margin-top: 14px; }
+      .actions .btn { border-radius: 12px; padding: 10px 15px; font-weight: 750; }
+      .btn-hint { color: #4e5abb; border: 1px solid #d6dbfa; background: #f3f4ff; }
+      .btn-hint:hover { color: #3b469d; background: #e9ebff; }
+      .btn-next { color: white; border: 1px solid #4c58bd; background: #5865ce; box-shadow: 0 8px 18px #5865ce33; }
+      .btn-next:hover { color: white; background: #4652b3; }
+      .learning-note { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 17px 0 24px; }
+      .note-card { display: flex; gap: 10px; padding: 13px; border: 1px solid var(--line); border-radius: 16px; background: #ffffffb8; }
+      .note-icon { color: #5d68c5; font-size: 1.2rem; }
+      .note-card strong { display: block; font-size: .83rem; }
+      .note-card small { color: var(--muted); font-size: .76rem; }
+      .site-footer { padding: 5px 0 20px; color: #7b849a; font-size: .8rem; }
+      .is-embedded .topbar, .is-embedded .hero, .is-embedded .learning-note, .is-embedded .site-footer { display: none; }
+      .is-embedded .container { max-width: 1200px; padding-top: 10px !important; }
+      .is-embedded .game-shell { padding: 16px; border-radius: 20px; box-shadow: none; }
+      .is-embedded #game-container { height: 490px; }
+      .is-embedded .game-heading h2 { font-size: 1.15rem; }
+      @media (max-width: 767px) {
+        .hero { align-items: start; flex-direction: column; padding-top: 18px; }
+        .stat-row { width: 100%; }
+        .stat-card { flex: 1; }
+        .game-shell { padding: 14px; border-radius: 20px; }
+        #game-container { height: 530px; }
+        .learning-note { grid-template-columns: 1fr; }
+        .is-embedded #game-container { height: 530px; }
+        .is-embedded .game-shell { padding: 10px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container py-2 d-flex align-items-center justify-content-between">
+        <a class="d-flex align-items-center gap-2 text-decoration-none text-dark" href="learning.html#memory">
+          <span class="brand-mark" aria-hidden="true">＋</span>
+          <span class="brand-title">數字探險隊</span>
+        </a>
+        <a class="back-link small" href="learning.html#memory">返回遊戲式學習指南</a>
+      </div>
+    </header>
+
+    <main class="container py-3">
+      <section class="hero">
+        <div>
+          <span class="eyebrow">加減法記憶配對</span>
+          <h1>把算式和答案<span>配成一對</span></h1>
+          <p>翻開算式卡與答案卡，運用湊十、拆分和位值策略解題。答錯會看到計算提示，沒有倒數，也不扣分。</p>
+        </div>
+        <div class="stat-row" aria-label="遊戲統計">
+          <div class="stat-card"><small>累積星分</small><strong><span id="scoreValue">0</span></strong></div>
+          <div class="stat-card"><small>連續答對</small><strong><span id="streakValue">0</span></strong></div>
+        </div>
+      </section>
+
+      <section class="game-shell" aria-label="加減法記憶配對遊戲">
+        <div class="game-heading">
+          <div>
+            <span id="stageBadge" class="stage-chip"><i class="stage-dot"></i>第一關</span>
+            <h2 id="stageTitle">二十以內的加減法</h2>
+            <p id="stageDescription">練習湊十與拆分，翻開一張算式卡和一張答案卡。</p>
+          </div>
+          <div class="pair-counter">已完成配對<strong id="pairCount">0 / 6</strong></div>
+        </div>
+        <div class="progress" role="progressbar" aria-label="本關配對進度" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0">
+          <div id="progressFill" class="progress-bar" style="width:0%"></div>
+        </div>
+        <div id="game-container" aria-label="點選算式卡與答案卡進行配對"></div>
+        <div id="feedbackBox" class="feedback" role="status" aria-live="polite">
+          <span id="feedbackIcon" class="feedback-icon" aria-hidden="true">✦</span>
+          <div><strong id="feedbackTitle">準備好了嗎</strong><p id="feedbackText">先翻開一張卡片，再找出與它相符的算式或答案。</p></div>
+        </div>
+        <div class="actions">
+          <div class="d-flex flex-wrap gap-2">
+            <button id="hintButton" class="btn btn-hint" type="button">給我計算提示</button>
+            <button id="restartButton" class="btn btn-outline-secondary" type="button">重新開始</button>
+          </div>
+          <button id="nextStageButton" class="btn btn-next" type="button" hidden>下一關 →</button>
+        </div>
+      </section>
+
+      <section class="learning-note" aria-label="學習設計">
+        <div class="note-card"><span class="note-icon" aria-hidden="true">◎</span><div><strong>練習運算策略</strong><small>每道題都附有可理解的拆解方法</small></div></div>
+        <div class="note-card"><span class="note-icon" aria-hidden="true">↗</span><div><strong>難度逐步提升</strong><small>從二十以內進階到兩位數與百位數</small></div></div>
+        <div class="note-card"><span class="note-icon" aria-hidden="true">♡</span><div><strong>錯誤帶來線索</strong><small>重試不扣分，讓學生安心修正</small></div></div>
+      </section>
+      <footer class="site-footer d-flex justify-content-between"><span>數字探險隊</span><span>先理解策略，再熟練計算</span></footer>
+    </main>
+
+    <script>
+      if (window.self !== window.top) document.body.classList.add("is-embedded")
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.90.0/dist/phaser.min.js"></script>
+    <script src="math-game.js"></script>
+  </body>
+</html>
